@@ -31,6 +31,7 @@ body {
 }
 a {
 	text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 li {
     list-style: none;
@@ -106,7 +107,7 @@ img {
     display: flex;
     gap: 40px;
 }
-.header__menu-item > a {
+.header__menu-item-link {
     position: relative;
     font-size: inherit;
     font-weight: 500;
@@ -114,12 +115,28 @@ img {
     color: var(--dark);
     padding: 24px 0;
     display: inline-block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header__menu-item > a:hover, a:active, a:focus, a:focus-visible {
+.header__menu-item:first-of-type .header__menu-item-link {
+    color: var(--pressed-state);
+}
+.header__menu-item-link:hover {
     color: var(--pressed-state);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header__menu-item > a::after {
+.header__menu-item-link:active {
+    color: var(--pressed-state);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__menu-item-link:focus {
+    color: var(--pressed-state);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__menu-item-link:focus-visible {
+    color: var(--pressed-state);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__menu-item-link::after {
     content: "";
     height: 4px;
     width: 100%;
@@ -128,6 +145,7 @@ img {
     left: 0;
     border-radius: 2px;
     background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header__menu-item > a:hover::after, a:active::after, a:focus::after, a:focus-visible::after {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -142,6 +160,7 @@ img {
     font-size: inherit;
     color: var(--text);
     font-style: normal;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header__contacts-list a:hover, a:active, a:focus, a:focus-visible {
     color: var(--pressed-state);
@@ -171,7 +190,9 @@ img {
 	background: var(--primary-brand);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	color: var(--white);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin: 48px auto 0 auto;
+
 }
 .header-section__btn:hover {
     background-color: var(--pressed-state);
@@ -253,13 +274,16 @@ img {
     justify-content: center;
     gap: 24px;
 }
-.our-team-section__social-media-icon {
+.our-team-section__social-media-icon > .sm-icon {
     width: 40px;
     height: 40px;
 }
+.our-team-section__social-media-icon  {
+    transition: background-color 250ms cubic-bezier(0.4, 0,0.2, 1);
+}
 .our-team-section__social-media-icon > .sm-icon:hover, .sm-icon:active, .sm-icon:focus, .sm-icon:focus-visible {
-    background-color: var(--pressed-state);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--pressed-state); 
+    transition: background-color 250ms cubic-bezier(0.4, 0,0.2, 1);
 }
 .customers-section__title {
     font-size: 36px;
@@ -285,6 +309,7 @@ img {
     border: 1px solid var(--subtle-text);
     border-radius: 4px;
     color: var(--subtle-text);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-section__item-link:hover, .customers-section__item-link:focus, .customers-section__item-link:focus-visible {
     color: var(--pressed-state);
@@ -293,6 +318,7 @@ img {
 }
 .customer-svg-icon {
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-section__item-link:hover .customer-svg-icon,
 .customers-section__item-link:active .customer-svg-icon,
@@ -315,6 +341,7 @@ img {
     color: var(--primary-brand);
     padding: 12px 24px;
     box-sizing: border-box;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-section__tabs-item > .btn:active, .btn:hover, .btn:focus, .btn:focus-visible {
     background-color: var(--pressed-state);
@@ -332,18 +359,20 @@ img {
 }
 .portfolio-section__card {
     flex-basis: calc((100% - 48px) / 3);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-section__card:hover .portfolio-section__card-overlay {
+.portfolio-section__card-link {
+    display: block;
+    color: var(--text);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-section__card-link:hover .portfolio-section__card-overlay {
     transform: translateY(0);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-section__card-link:active, .portfolio-section__card-link:focus, .portfolio-section__card-link:focus-visible {
     transform: translateY(0);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.portfolio-section__card-link {
-    display: block;
-    color: var(--text);
 }
 .portfolio-section__card-link:focus , .portfolio-section__card-link:focus-visible {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -441,6 +470,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-icon {
     fill: var(--light);
@@ -498,6 +528,7 @@ img {
     top: 24px;
     right: 24px;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover, .modal-btn:active, .modal-btn:focus, .modal-btn:focus-visible {
     background-color: var(--pressed-state);
