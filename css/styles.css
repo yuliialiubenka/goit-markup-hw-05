@@ -544,6 +544,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-icon {
     fill: var(--light);
@@ -629,6 +630,7 @@ img {
     pointer-events: none;
 }
 .modal {
+    min-height: 576px;
     width: 408px;
     background-color:  var(--modsl-background);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -641,18 +643,18 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: var(--dark);
     position: absolute;
     top: 24px;
     right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--dark);
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
@@ -664,8 +666,10 @@ img {
 }
 .modal__icon {
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal__title {
+    display: block;
     margin-bottom: 16px;
     text-align: center;
 }
