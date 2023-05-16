@@ -404,14 +404,20 @@ img {
 .portfolio-section__card-link:hover .portfolio-section__card-overlay {
     transform: translateY(0%);
 }
+.portfolio-section__card-link:focus .portfolio-section__card-overlay {
+    transform: translateY(0%);
+}
+.portfolio-section__card-link:active .portfolio-section__card-overlay {
+    transform: translateY(0%);
+}
+.portfolio-section__card-link:focus-visible .portfolio-section__card-overlay {
+    transform: translateY(0%);
+}
+.portfolio-section__card-link:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 .portfolio-section__card-link:active {
-    transform: translateY(0%);
-}
-.portfolio-section__card-link:focus {
-    transform: translateY(0%);
-}
-.portfolio-section__card-link:focus-visible {
-    transform: translateY(0%);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .portfolio-section__card-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
