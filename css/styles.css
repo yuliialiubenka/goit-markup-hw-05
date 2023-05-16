@@ -365,14 +365,14 @@ img {
 .portfolio-section__card-link {
     display: block;
     color: var(--text);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-section__card-link:hover .portfolio-section__card-overlay {
-    transform: translateY(0);
+    transform: translateY(0%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-section__card-link:active, .portfolio-section__card-link:focus, .portfolio-section__card-link:focus-visible {
-    transform: translateY(0);
+    transform: translateY(0%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-section__card-link:focus , .portfolio-section__card-link:focus-visible {
